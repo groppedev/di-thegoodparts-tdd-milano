@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" default-lazy-init="default">
+
+    <bean id="spellcheck.infrastructure.componentProvider" class="groppedev.dithegoodparts.application.ComponentSpringProvider">
+       <description>Provider dei componenti</description>
+    </bean>
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<description>Configurazione Injector per proprietà dell'applicazione
+		</description>
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:injector.properties</value>
+			</list>
+		</property>
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+	</bean>
+	
+<!-- 	<bean id="spellcheck.contructor" class="groppedev.dithegoodparts.domain.spellcheck.SpellChecker"> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="spellcheck.lexicon"> -->
+	
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="spellcheck.lexicon.factory" class="groppedev.dithegoodparts.domain.lexicon.factory.LexiconStandardFactory" > -->
+	
+<!-- 	</bean> -->
+<!-- 	<bean id="tdd.milano.app.pathResolver" factory-bean="tdd.milano.app.pathResolverInitializer" -->
+<!-- 		factory-method="initPathResolver" scope="singleton"> -->
+<!-- 		<description>Componente che risolve i paths per l'applicazione -->
+<!-- 		</description> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="spellcheck.setter" class="groppedev.dithegoodparts.domain.spellcheck.wrongdesign.SpellCheckerSetterInjection"> -->
+	
+<!-- 	</bean> -->
+
+<!-- 	<beans profile="PRODUCTION"> -->
+<!-- 		<bean id="spellcheck.lexicon.repository"  -->
+<!-- 		      class="groppedev.dithegoodparts.domain.lexicon.repository.LexiconFileRepository"> -->
+<!-- 			<description>Repository che si basa su files</description> -->
+<!-- 		</bean> -->
+<!-- 	</beans> -->
+<!-- 	<beans profile="TEST"> -->
+<!-- 		<bean id="spellcheck.lexicon.repository"  -->
+<!-- 		      class="groppedev.dithegoodparts.domain.lexicon.repository.LexiconInMemoryRepository"> -->
+<!-- 			<description>Repository in memoria</description> -->
+<!-- 		</bean> -->
+<!-- 	</beans> -->
+
+	<!-- <bean id="tdd.milano.diceGameService" class="tdd.milano.domain.DiceGameService" -->
+	<!-- scope="singleton"> -->
+	<!-- <description>Dice game service</description> -->
+	<!-- <constructor-arg index="0"> -->
+	<!-- <bean class="tdd.milano.infrastructure.DiceGamesInMemoryRepository" 
+		/> -->
+	<!-- </constructor-arg> -->
+	<!-- </bean> -->
+
+	<!-- <bean id="tdd.milano.app.servicebeanprovider" -->
+	<!-- class="com.zucchetti.fui.appweb.listener.ServiceBeanProviderWithInjectorManager" -->
+	<!-- scope="singleton" /> -->
+
+	<!-- <bean id="tdd.milano.app.pathResolverInitializer" class="tdd.milano.application.PathResolverInitializer" -->
+	<!-- init-method="initPathResolver"> -->
+	<!-- <constructor-arg index="0" -->
+	<!-- value="#{T(tdd.milano.application.ApplicationStateExposer).getServletContext()}" 
+		/> -->
+	<!-- </bean> -->
+	<!-- <bean id="tdd.milano.app.pathResolver" factory-bean="tdd.milano.app.pathResolverInitializer" -->
+	<!-- factory-method="initPathResolver" scope="singleton"> -->
+	<!-- <description>Componente che risolve i paths per l'applicazione -->
+	<!-- </description> -->
+	<!-- </bean> -->
+
+	<!-- <bean id="tdd.milano.tPooler" class="tdd.milano.pooler.ThreadPooler" -->
+	<!-- scope="singleton" init-method="init" destroy-method="close"> -->
+	<!-- <description>Thread pooler dell'applicazione</description> -->
+	<!-- <constructor-arg index="0" value="#{MIN_PRIORITY}" /> -->
+	<!-- <constructor-arg index="1" value="${tdd.milano.poolMaxThread:5}" /> -->
+	<!-- <constructor-arg index="2" value="true" /> -->
+	<!-- <constructor-arg index="3" value="thread-ofpool" /> -->
+	<!-- </bean> -->
+
+	<!-- <beans profile="PRODUCTION"> -->
+	<!-- <bean id="tdd.milano.datasource" class="org.apache.tomcat.jdbc.pool.DataSource" -->
+	<!-- destroy-method="close"> -->
+	<!-- <description>DataSource</description> -->
+	<!-- <property name="driverClassName" value="${pooler.driverClassName}" 
+		/> -->
+	<!-- <property name="url" value="${pooler.url}" /> -->
+	<!-- <property name="username" value="${pooler.username}" /> -->
+	<!-- <property name="password" value="${pooler.password}" /> -->
+	<!-- <property name="initialSize" value="0" /> -->
+	<!-- <property name="maxActive" value="${pooler.maxActive}" /> -->
+	<!-- <property name="maxIdle" value="${pooler.maxIdle}" /> -->
+	<!-- <property name="minIdle" value="0" /> -->
+	<!-- <property name="validationQuery" value="select 1" /> -->
+	<!-- <property name="validationQueryTimeout" value="10" /> -->
+	<!-- <property name="testOnBorrow" value="true" /> -->
+	<!-- <property name="validationInterval" value="1000" /> -->
+	<!-- <property name="timeBetweenEvictionRunsMillis" value="0" /> -->
+	<!-- </bean> -->
+	<!-- </beans> -->
+
+</beans>
