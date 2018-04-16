@@ -81,6 +81,7 @@
 			<constructor-arg index="1">
 				<bean class="groppedev.dithegoodparts.domain.lexicon.services.suggestions.strategy.SuggestionStrategyFactory">
 					<description>Factory per la strategia di suggerimento</description>
+					<!-- Spring Expression Language (SpEL) -->
 					<constructor-arg index="0" value="#{T(groppedev.dithegoodparts.application.spellcheck.ApplicationRuntimeConfiguration).suggestionStrategyType()}" />
 					<constructor-arg index="1" ref="spellcheck.lexicon.queryexecutor" />
 			    </bean>
@@ -89,6 +90,7 @@
 
 		<bean id="spellcheck.lexicon.factory" class="groppedev.dithegoodparts.domain.lexicon.factory.LexiconAutoInjectorFactory" scope="prototype">
 			<description>Factory per la creazione dei lessici (Tipo di lessico impostato tramite una proprietà di runtime)</description>
+			<!-- Spring Expression Language (SpEL) -->
 			<constructor-arg index="0" value="#{T(groppedev.dithegoodparts.application.spellcheck.ApplicationRuntimeConfiguration).lexiconType()}" />
 			<constructor-arg index="1" ref="spellcheck.infrastructure.componentProvider" />
 		</bean>

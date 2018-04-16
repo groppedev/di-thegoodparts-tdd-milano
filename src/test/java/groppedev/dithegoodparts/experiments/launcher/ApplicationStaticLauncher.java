@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.application.launcher;
+package groppedev.dithegoodparts.experiments.launcher;
 
 import java.util.Collection;
 
