@@ -2,22 +2,19 @@ package groppedev.dithegoodparts.application;
 
 import static org.springframework.core.env.AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.util.ReflectionUtils;
 
+import groppedev.dithegoodparts.application.provider.ComponentSpringProvider;
 import groppedev.dithegoodparts.application.spellcheck.ApplicationRuntimeConfiguration;
 import groppedev.dithegoodparts.application.spellcheck.Configuration;
 import groppedev.dithegoodparts.domain.Word;
 import groppedev.dithegoodparts.domain.lexicon.LexiconType;
-import groppedev.dithegoodparts.domain.lexicon.services.SuggestionStrategyType;
+import groppedev.dithegoodparts.domain.lexicon.services.suggestions.strategy.SuggestionStrategyType;
 import groppedev.dithegoodparts.domain.spellcheck.SpellChecker;
 
 public class Application 

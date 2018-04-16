@@ -1,7 +1,7 @@
 package groppedev.dithegoodparts.application.spellcheck;
 
 import groppedev.dithegoodparts.domain.lexicon.LexiconType;
-import groppedev.dithegoodparts.domain.lexicon.services.SuggestionStrategyType;
+import groppedev.dithegoodparts.domain.lexicon.services.suggestions.strategy.SuggestionStrategyType;
 
 public class Configuration 
 {

@@ -3,7 +3,7 @@ package groppedev.dithegoodparts.domain.lexicon;
 import java.util.Collection;
 
 import groppedev.dithegoodparts.domain.Word;
-import groppedev.dithegoodparts.domain.lexicon.services.SuggestionService;
+import groppedev.dithegoodparts.domain.lexicon.services.suggestions.SuggestionService;
 
 /**
  * il metodo {@link #words()} viola l'incapsulamento dell'oggetto {@link Lexicon}

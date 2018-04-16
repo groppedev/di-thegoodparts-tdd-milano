@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.application;
+package groppedev.dithegoodparts.application.provider;
 
 import java.util.Objects;
 
@@ -15,7 +15,7 @@ public class ComponentSpringProvider implements ComponentProvider
 		return applicationContext.getBean(componentType);
 	}
 
-	protected void setApplicationContext(AbstractApplicationContext applicationContext) 
+	public void setApplicationContext(AbstractApplicationContext applicationContext) 
 	{
 		this.applicationContext = applicationContext;
 	}

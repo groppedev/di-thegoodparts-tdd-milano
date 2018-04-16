@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.domain.lexicon.services;
+package groppedev.dithegoodparts.domain.lexicon.services.suggestions.strategy;
 
 import groppedev.dithegoodparts.domain.Word;
 

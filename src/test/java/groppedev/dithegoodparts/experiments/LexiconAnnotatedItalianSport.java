@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.domain.lexicon.other;
+package groppedev.dithegoodparts.experiments;
 
 import java.util.Collection;
 

@@ -9,7 +9,7 @@ import groppedev.dithegoodparts.application.Application;
 import groppedev.dithegoodparts.application.Application.ApplicationDynamicAPI;
 import groppedev.dithegoodparts.domain.Word;
 import groppedev.dithegoodparts.domain.lexicon.LexiconType;
-import groppedev.dithegoodparts.domain.lexicon.services.SuggestionStrategyType;
+import groppedev.dithegoodparts.domain.lexicon.services.suggestions.strategy.SuggestionStrategyType;
 
 public class ApplicationDynamicLauncher 
 {

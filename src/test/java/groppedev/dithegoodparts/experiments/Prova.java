@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.application.launcher.other;
+package groppedev.dithegoodparts.experiments;
 
 import javax.inject.Named;
 

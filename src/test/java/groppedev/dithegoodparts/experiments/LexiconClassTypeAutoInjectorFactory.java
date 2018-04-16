@@ -1,8 +1,8 @@
-package groppedev.dithegoodparts.domain.lexicon.factory.other;
+package groppedev.dithegoodparts.experiments;
 
 import org.reflections.Reflections;
 
-import groppedev.dithegoodparts.application.ComponentProvider;
+import groppedev.dithegoodparts.application.provider.ComponentProvider;
 import groppedev.dithegoodparts.domain.lexicon.Lexicon;
 import groppedev.dithegoodparts.domain.lexicon.LexiconItalianFood;
 import groppedev.dithegoodparts.domain.lexicon.LexiconItalianSport;

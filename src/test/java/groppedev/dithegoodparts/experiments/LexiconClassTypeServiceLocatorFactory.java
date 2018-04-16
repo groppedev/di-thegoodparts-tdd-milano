@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.domain.lexicon.factory.other;
+package groppedev.dithegoodparts.experiments;
 
 import groppedev.dithegoodparts.domain.lexicon.Lexicon;
 import groppedev.dithegoodparts.domain.lexicon.LexiconItalianFood;

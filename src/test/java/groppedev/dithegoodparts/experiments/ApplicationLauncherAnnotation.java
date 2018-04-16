@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.application.launcher.other;
+package groppedev.dithegoodparts.experiments;
 
 import static org.springframework.core.env.AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME;
 

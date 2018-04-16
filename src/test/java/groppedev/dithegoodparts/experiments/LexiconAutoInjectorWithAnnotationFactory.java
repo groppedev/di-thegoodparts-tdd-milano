@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.domain.lexicon.factory.other;
+package groppedev.dithegoodparts.experiments;
 
 import java.util.Objects;
 import java.util.Set;
@@ -7,7 +7,7 @@ import org.apache.commons.collections4.IterableUtils;
 import org.apache.commons.collections4.Predicate;
 import org.reflections.Reflections;
 
-import groppedev.dithegoodparts.application.ComponentProvider;
+import groppedev.dithegoodparts.application.provider.ComponentProvider;
 import groppedev.dithegoodparts.domain.lexicon.Lexicon;
 import groppedev.dithegoodparts.domain.lexicon.LexiconMeta;
 import groppedev.dithegoodparts.domain.lexicon.LexiconType;

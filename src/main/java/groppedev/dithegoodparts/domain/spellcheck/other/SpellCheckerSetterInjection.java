@@ -7,7 +7,7 @@ import org.apache.commons.collections4.CollectionUtils;
 
 import groppedev.dithegoodparts.domain.Word;
 import groppedev.dithegoodparts.domain.lexicon.Lexicon;
-import groppedev.dithegoodparts.domain.lexicon.services.SuggestionService;
+import groppedev.dithegoodparts.domain.lexicon.services.suggestions.SuggestionService;
 
 /**
  * - Non sono evidenti le modifiche nei TEST

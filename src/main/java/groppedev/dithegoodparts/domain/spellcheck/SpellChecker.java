@@ -4,17 +4,11 @@ import java.util.Collection;
 import java.util.Objects;
 
 import org.apache.commons.collections4.CollectionUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import groppedev.dithegoodparts.domain.Word;
 import groppedev.dithegoodparts.domain.lexicon.Lexicon;
-import groppedev.dithegoodparts.domain.lexicon.services.SuggestionService;
+import groppedev.dithegoodparts.domain.lexicon.services.suggestions.SuggestionService;
 
-/**
- * https://www.amazon.it/gp/product/0134685997/ref=ox_sc_act_title_1?smid=A11IL2PNWYJU7H&psc=1
- *
- */
 public class SpellChecker
 {
 	private final Lexicon lexicon;

@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 	default-lazy-init="true">
 
-	<bean id="spellcheck.infrastructure.componentProvider" class="groppedev.dithegoodparts.application.ComponentSpringProvider">
+	<bean id="spellcheck.infrastructure.componentProvider" class="groppedev.dithegoodparts.application.provider.ComponentSpringProvider">
 		<description>Provider dei componenti</description>
 	</bean>
 
@@ -12,18 +12,13 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<description>Configurazione Injector per proprietà dell'applicazione
 		</description>
-		<property name="ignoreUnresolvablePlaceholders" value="true" />
 		<property name="locations">
 			<list>
 				<value>classpath:injector.properties</value>
 			</list>
 		</property>
-		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
 	</bean>
 
-	<bean id="spellcheck.lexicon" factory-bean="spellcheck.lexicon.factory" factory-method="newLexicon">
-		<description>Lessico</description>
-	</bean>
 	<bean id="spellcheck.lexicon.italianFood" class="groppedev.dithegoodparts.domain.lexicon.LexiconItalianFood">
 		<description>Lessico dei cibi italiani</description>
 		<constructor-arg index="0" ref="spellcheck.lexicon.repository" />
@@ -40,24 +35,27 @@
 		<constructor-arg index="0" ref="spellcheck.lexicon.repository" />
 	</bean>
 
-	<bean id="spellcheck" class="groppedev.dithegoodparts.domain.spellcheck.SpellChecker">
-		<description>Componente per il controllo ortografico (Root del grafo di oggetti)</description>
-		<constructor-arg index="0" ref="spellcheck.lexicon" />
-		<constructor-arg index="1" ref="spellcheck.suggestions.service" />
-	</bean>
-	
-	<bean id="spellcheck.suggestions.service" class="groppedev.dithegoodparts.domain.lexicon.services.SuggestionService">
-		<description>Servizio per i suggerimenti in caso di parole errate</description>
-		<constructor-arg index="0" ref="spellcheck.lexicon" />
-		<constructor-arg index="1" ref="spellcheck.infrastructure.componentProvider" />
-	</bean>
-		
 	<beans profile="STATIC_APP">
-		<bean id="spellcheck.suggestions.strategy.factory" class="groppedev.dithegoodparts.domain.lexicon.services.SuggestionStrategyFactory">
-			<description>Factory per la strategia di suggerimento</description>
-			<constructor-arg index="0" value="${spellcheck.suggestions.strategy:END_WITH}" />
-			<constructor-arg index="1" ref="spellcheck.lexicon.queryexecutor" />
+	
+		<bean id="spellcheck" class="groppedev.dithegoodparts.domain.spellcheck.SpellChecker">
+			<description>Componente per il controllo ortografico (Root del grafo di oggetti)</description>
+			<constructor-arg index="0" ref="spellcheck.lexicon" />
+			<constructor-arg index="1" ref="spellcheck.suggestions.service" />
 		</bean>
+		<bean id="spellcheck.lexicon" factory-bean="spellcheck.lexicon.factory" factory-method="newLexicon">
+			<description>Lessico</description>
+		</bean>
+		<bean id="spellcheck.suggestions.service" class="groppedev.dithegoodparts.domain.lexicon.services.suggestions.SuggestionService">
+			<description>Servizio per i suggerimenti in caso di parole errate</description>
+			<constructor-arg index="0" ref="spellcheck.lexicon" />
+			<constructor-arg index="1">
+				<bean class="groppedev.dithegoodparts.domain.lexicon.services.suggestions.strategy.SuggestionStrategyFactory">
+					<description>Factory per la strategia di suggerimento</description>
+					<constructor-arg index="0" value="${spellcheck.suggestions.strategy:END_WITH}" />
+					<constructor-arg index="1" ref="spellcheck.lexicon.queryexecutor" />
+			    </bean>
+			</constructor-arg>
+	    </bean>
 
 		<bean id="spellcheck.lexicon.factory" class="groppedev.dithegoodparts.domain.lexicon.factory.LexiconAutoInjectorFactory">
 			<description>Factory per la creazione dei lessici (Tipo di lessico impostato tramite proprietà dell'injector)</description>
@@ -68,11 +66,26 @@
 	
 	<!-- Le factory per la configurazione dinamica devono essere di tipo prototype ed i valori della configurazione devono essere riletti ogni volta -->
 	<beans profile="DYNAMIC_APP">
-		<bean id="spellcheck.suggestions.strategy.factory" class="groppedev.dithegoodparts.domain.lexicon.services.SuggestionStrategyFactory" scope="prototype">
-			<description>Factory per la strategia di suggerimento</description>
-			<constructor-arg index="0" value="#{T(groppedev.dithegoodparts.application.spellcheck.ApplicationRuntimeConfiguration).suggestionStrategyType()}" />
-			<constructor-arg index="1" ref="spellcheck.lexicon.queryexecutor" />
+	
+		<bean id="spellcheck" class="groppedev.dithegoodparts.domain.spellcheck.SpellChecker" scope="prototype">
+			<description>Componente per il controllo ortografico (Root del grafo di oggetti)</description>
+			<constructor-arg index="0" ref="spellcheck.lexicon" />
+			<constructor-arg index="1" ref="spellcheck.suggestions.service" />
 		</bean>
+		<bean id="spellcheck.lexicon" factory-bean="spellcheck.lexicon.factory" factory-method="newLexicon" scope="prototype">
+			<description>Lessico</description>
+		</bean>
+		<bean id="spellcheck.suggestions.service" class="groppedev.dithegoodparts.domain.lexicon.services.suggestions.SuggestionService" scope="prototype">
+			<description>Servizio per i suggerimenti in caso di parole errate</description>
+			<constructor-arg index="0" ref="spellcheck.lexicon" />
+			<constructor-arg index="1">
+				<bean class="groppedev.dithegoodparts.domain.lexicon.services.suggestions.strategy.SuggestionStrategyFactory">
+					<description>Factory per la strategia di suggerimento</description>
+					<constructor-arg index="0" value="#{T(groppedev.dithegoodparts.application.spellcheck.ApplicationRuntimeConfiguration).suggestionStrategyType()}" />
+					<constructor-arg index="1" ref="spellcheck.lexicon.queryexecutor" />
+			    </bean>
+			</constructor-arg>
+	    </bean>
 
 		<bean id="spellcheck.lexicon.factory" class="groppedev.dithegoodparts.domain.lexicon.factory.LexiconAutoInjectorFactory" scope="prototype">
 			<description>Factory per la creazione dei lessici (Tipo di lessico impostato tramite una proprietà di runtime)</description>

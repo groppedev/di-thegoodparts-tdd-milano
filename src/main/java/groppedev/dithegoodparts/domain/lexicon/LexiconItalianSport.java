@@ -12,7 +12,7 @@ public class LexiconItalianSport implements Lexicon
 {
 	private final LexiconTyped myLexicon;
 
-	public LexiconItalianSport(LexiconRepository lexiconREPO, LexiconQueryExecutor lexiconQE) 
+	public LexiconItalianSport(LexiconRepository lexiconREPO, LexiconQueryExecutor lexiconQE)
 	{
 		this.myLexicon = new LexiconTyped(ITALIAN_SPORT, lexiconREPO, lexiconQE);
 	}

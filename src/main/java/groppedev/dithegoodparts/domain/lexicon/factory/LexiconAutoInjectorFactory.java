@@ -1,6 +1,6 @@
 package groppedev.dithegoodparts.domain.lexicon.factory;
 
-import groppedev.dithegoodparts.application.ComponentProvider;
+import groppedev.dithegoodparts.application.provider.ComponentProvider;
 import groppedev.dithegoodparts.domain.lexicon.Lexicon;
 import groppedev.dithegoodparts.domain.lexicon.LexiconType;
 
@@ -19,7 +19,7 @@ public class LexiconAutoInjectorFactory implements LexiconFactory
 	private final LexiconType lexiconType;
 	private final ComponentProvider componentProvider;
 	
-	public LexiconAutoInjectorFactory(LexiconType lexiconType, ComponentProvider provider) 
+	public LexiconAutoInjectorFactory(LexiconType lexiconType, ComponentProvider provider)
 	{
 		this.lexiconType = lexiconType;
 		this.componentProvider = provider;

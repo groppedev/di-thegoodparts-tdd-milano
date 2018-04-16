@@ -1,9 +1,9 @@
 package groppedev.dithegoodparts.domain.lexicon.factory;
 
 import groppedev.dithegoodparts.domain.lexicon.Lexicon;
-import groppedev.dithegoodparts.domain.lexicon.factory.other.LexiconAutoInjectorWithAnnotationFactory;
-import groppedev.dithegoodparts.domain.lexicon.factory.other.LexiconClassTypeAutoInjectorFactory;
-import groppedev.dithegoodparts.domain.lexicon.factory.other.LexiconStandardFactory;
+import groppedev.dithegoodparts.experiments.LexiconAutoInjectorWithAnnotationFactory;
+import groppedev.dithegoodparts.experiments.LexiconClassTypeAutoInjectorFactory;
+import groppedev.dithegoodparts.experiments.LexiconStandardFactory;
 
 /**
  * 1) Se non è necessario cambiare dinamicamente il tipo di implementazione:

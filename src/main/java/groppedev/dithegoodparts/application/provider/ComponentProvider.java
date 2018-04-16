@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.application;
+package groppedev.dithegoodparts.application.provider;
 
 import javax.inject.Provider;
 
