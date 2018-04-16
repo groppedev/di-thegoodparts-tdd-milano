@@ -12,7 +12,7 @@ import groppedev.dithegoodparts.domain.lexicon.repository.LexiconRepository;
 public class LexiconItalianFood implements Lexicon
 {
 	private final LexiconTyped myLexicon;
-
+	
 	public LexiconItalianFood(LexiconRepository lexiconREPO, LexiconQueryExecutor lexiconQE) 
 	{
 		this.myLexicon = new LexiconTyped(ITALIAN_FOOD, lexiconREPO, lexiconQE);

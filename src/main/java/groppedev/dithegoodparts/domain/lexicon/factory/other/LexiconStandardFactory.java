@@ -1,9 +1,10 @@
-package groppedev.dithegoodparts.domain.lexicon.factory;
+package groppedev.dithegoodparts.domain.lexicon.factory.other;
 
 import groppedev.dithegoodparts.domain.lexicon.LexiconItalianFood;
 import groppedev.dithegoodparts.domain.lexicon.LexiconItalianSport;
 import groppedev.dithegoodparts.domain.lexicon.Lexicon;
 import groppedev.dithegoodparts.domain.lexicon.LexiconType;
+import groppedev.dithegoodparts.domain.lexicon.factory.LexiconFactory;
 import groppedev.dithegoodparts.domain.lexicon.repository.LexiconQueryExecutor;
 import groppedev.dithegoodparts.domain.lexicon.repository.LexiconRepository;
 

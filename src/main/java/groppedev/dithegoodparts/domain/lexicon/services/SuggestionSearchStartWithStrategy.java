@@ -17,6 +17,6 @@ public class SuggestionSearchStartWithStrategy implements SuggestionStrategy
 	@Override
 	public boolean evaluate(Word aWord) 
 	{
-		return false;
+		return aWord.startsWith(typo);
 	}
 }

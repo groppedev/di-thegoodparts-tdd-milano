@@ -1,7 +1,9 @@
 package groppedev.dithegoodparts.domain.lexicon.repository;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,16 +14,17 @@ import java.util.Set;
 import groppedev.dithegoodparts.domain.Word;
 import groppedev.dithegoodparts.domain.lexicon.LexiconType;
 
-public class LexiconFileRepository implements LexiconRepository 
+public class LexiconFileRepository implements LexiconRepository, AutoCloseable
 {
 	private final Set<LexiconWord> lexiconWords;
 
-	public LexiconFileRepository() 
+	public LexiconFileRepository() throws IOException 
 	{
 		lexiconWords = new HashSet<LexiconWord>();
+		init();
 	}
 	
-	public void init() throws IOException
+	private void init() throws IOException
 	{
 		for(LexiconType type : LexiconType.values())
 		{
@@ -36,9 +39,15 @@ public class LexiconFileRepository implements LexiconRepository
 		}
 	}
 
+	@Override
+	public void close()
+	{
+		System.out.println("Distrutto il repository del lessico [Implementazione su file]");
+	}
+
 	private Path resolveResourceName(LexiconType type) 
 	{
-		return Paths.get(type.name() + ".lexicon");
+		return Paths.get("").toAbsolutePath().resolve("src/main/resources").resolve(type.name() + ".lexicon");
 	}
 	
 	@Override

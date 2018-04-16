@@ -5,6 +5,8 @@ import groppedev.dithegoodparts.domain.lexicon.services.SuggestionStrategyType;
 
 public class Configuration 
 {
+	public static final Configuration NO_CONFIGURATION = new Configuration(LexiconType.NO_LEXICON, SuggestionStrategyType.NO_STRATEGY);
+	
 	private final LexiconType lexicon;
 	private final SuggestionStrategyType suggestion;
 	
@@ -24,4 +26,9 @@ public class Configuration
 		return suggestion;
 	}
 
+	@Override
+	public String toString() 
+	{
+		return "Configuration [lexicon=" + lexicon + ", suggestion=" + suggestion + "]";
+	}
 }

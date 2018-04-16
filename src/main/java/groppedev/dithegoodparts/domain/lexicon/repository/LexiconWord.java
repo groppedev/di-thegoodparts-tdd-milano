@@ -53,4 +53,10 @@ class LexiconWord
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString()
+	{
+		return "LexiconWord [type=" + type + ", word=" + word + "]";
+	}
 }

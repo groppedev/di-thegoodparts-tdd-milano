@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.Objects;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import groppedev.dithegoodparts.domain.Word;
 import groppedev.dithegoodparts.domain.lexicon.Lexicon;
@@ -39,5 +41,11 @@ public class SpellChecker
 			return this.suggestionService.searchSuggestions(typo);
 		}
 		return CollectionUtils.emptyCollection();
+	}
+
+	@Override
+	public String toString() 
+	{
+		return "SpellChecker [lexicon=" + lexicon.words() + "]";
 	}
 }

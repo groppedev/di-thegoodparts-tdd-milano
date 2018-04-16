@@ -35,7 +35,7 @@ public class SuggestionStrategyFactory
 		case END_WITH:
 			return new SuggestionSearchEndWithStrategy(typo);
 		default:
-			throw new IllegalStateException();
+			throw new IllegalStateException(String.format("Strategia per i suggerimenti [%s] non valida", strategyType));
 		}
 	}
 }

@@ -27,6 +27,12 @@ public class LexiconInMemoryRepository implements LexiconRepository
 		lexiconWords.add(new LexiconWord(LexiconType.ITALIAN_SPORT, Word.aWord("pallacanestro")));
 	}
 	
+	public void destroy()
+	{
+		lexiconWords.clear();
+		System.out.println("Distrutto il repository del lessico [In Memoria]");
+	}
+	
 	@Override
 	public Collection<Word> words(LexiconType type) 
 	{

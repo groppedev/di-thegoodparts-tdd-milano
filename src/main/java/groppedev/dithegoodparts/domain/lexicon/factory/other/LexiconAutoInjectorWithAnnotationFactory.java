@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.domain.lexicon.factory.advanced;
+package groppedev.dithegoodparts.domain.lexicon.factory.other;
 
 import java.util.Objects;
 import java.util.Set;

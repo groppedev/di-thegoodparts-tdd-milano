@@ -3,6 +3,8 @@ package groppedev.dithegoodparts.application;
 import javax.inject.Provider;
 
 /**
+ * I componenti che dipendono dal {@link ComponentProvider} devono essere gestiti in modalità LAZY
+ * 
  * @see Provider
  */
 public interface ComponentProvider 
@@ -12,6 +14,4 @@ public interface ComponentProvider
 	 * @return Istanza del componente del tipo indicato.
 	 */
 	<T> T component(Class<T> componentType);
-	
-	<T> T component(String componentID, Class<T> componentType);
 }

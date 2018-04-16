@@ -17,6 +17,6 @@ public class SuggestionSearchEndWithStrategy implements SuggestionStrategy
 	@Override
 	public boolean evaluate(Word aWord) 
 	{
-		return false;
+		return aWord.endsWith(typo);
 	}
 }

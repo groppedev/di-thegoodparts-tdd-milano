@@ -7,13 +7,13 @@ import groppedev.dithegoodparts.domain.Word;
 import groppedev.dithegoodparts.domain.lexicon.repository.LexiconQueryExecutor;
 import groppedev.dithegoodparts.domain.lexicon.repository.LexiconRepository;
 
-class LexiconTyped implements Lexicon
+public class LexiconTyped implements Lexicon
 {
 	private final LexiconType lexiconType;
 	private final LexiconRepository lexiconREPO;
 	private final LexiconQueryExecutor lexiconQE;
 	
-	LexiconTyped(LexiconType type, LexiconRepository lexiconREPO, LexiconQueryExecutor lexiconQE) 
+	public LexiconTyped(LexiconType type, LexiconRepository lexiconREPO, LexiconQueryExecutor lexiconQE) 
 	{
 		Objects.requireNonNull(type, "Tipologia di lessico non impostata");
 		Objects.requireNonNull(lexiconREPO, "Repository del lessico non impostato");

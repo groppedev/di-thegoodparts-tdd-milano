@@ -11,7 +11,17 @@ public class Word
 	{
 		this.text = text;
 	}
+	
+	public boolean startsWith(Word word)
+	{
+		return this.text.startsWith(word.text);
+	}
 
+	public boolean endsWith(Word word)
+	{
+		return this.text.endsWith(word.text);
+	}
+	
 	public static Word aWord(String text)
 	{
 		return new Word(text);

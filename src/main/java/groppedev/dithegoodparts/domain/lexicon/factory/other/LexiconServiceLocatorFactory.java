@@ -1,7 +1,8 @@
-package groppedev.dithegoodparts.domain.lexicon.factory;
+package groppedev.dithegoodparts.domain.lexicon.factory.other;
 
 import groppedev.dithegoodparts.domain.lexicon.Lexicon;
 import groppedev.dithegoodparts.domain.lexicon.LexiconType;
+import groppedev.dithegoodparts.domain.lexicon.factory.LexiconFactory;
 
 /**
  DA: https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/beans/factory/config/ServiceLocatorFactoryBean.html

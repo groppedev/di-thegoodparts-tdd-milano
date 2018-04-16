@@ -8,16 +8,16 @@ import groppedev.dithegoodparts.domain.lexicon.LexiconType;
 
 public class LexiconQueryExecutor 
 {
-	private final LexiconRepository lexiconRepo;
+	private final LexiconRepository lexiconREPO;
 
-	public LexiconQueryExecutor(LexiconRepository lexiconRepo) 
+	public LexiconQueryExecutor(LexiconRepository lexiconREPO) 
 	{
-		this.lexiconRepo = lexiconRepo;
+		this.lexiconREPO = lexiconREPO;
 	}
 	
 	public boolean matchWord(LexiconType type, final Word wordToMatch)
 	{
-		return IterableUtils.matchesAny(lexiconRepo.words(type), new Predicate<Word>() 
+		return IterableUtils.matchesAny(lexiconREPO.words(type), new Predicate<Word>() 
 		{
 			public boolean evaluate(Word word) 
 			{

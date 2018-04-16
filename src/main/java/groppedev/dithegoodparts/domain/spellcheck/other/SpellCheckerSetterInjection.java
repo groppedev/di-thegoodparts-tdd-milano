@@ -1,4 +1,4 @@
-package groppedev.dithegoodparts.domain.spellcheck.wrongdesign;
+package groppedev.dithegoodparts.domain.spellcheck.other;
 
 import java.util.Collection;
 import java.util.Objects;
