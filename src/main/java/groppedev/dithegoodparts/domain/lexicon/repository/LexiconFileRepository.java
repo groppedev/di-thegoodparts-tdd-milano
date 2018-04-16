@@ -16,10 +16,17 @@ public class LexiconFileRepository implements LexiconRepository, AutoCloseable
 {
 	private final Set<LexiconWord> lexiconWords;
 
-	public LexiconFileRepository() throws IOException 
+	public LexiconFileRepository()
 	{
 		lexiconWords = new HashSet<LexiconWord>();
-		init();
+		try
+		{
+			init();
+		} 
+		catch (Exception e) 
+		{
+			throw new RuntimeException(e);
+		}
 	}
 	
 	private void init() throws IOException
