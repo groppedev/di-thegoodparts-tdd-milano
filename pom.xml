@@ -60,5 +60,13 @@
 			<version>1.10.19</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>24.1-jre</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 </project>

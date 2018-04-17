@@ -25,7 +25,6 @@ public class LexiconUtils
 				return lexiconWord.matchesType(type);
 			}
 		});
-		
 		return CollectionUtils.collect(currentTypeWords, new Transformer<LexiconWord, Word>()
 		{
 			@Override
@@ -34,6 +33,5 @@ public class LexiconUtils
 				return lexiconWord.toWord();
 			}
 		});
-
 	}
 }
