@@ -18,6 +18,7 @@ import groppedev.dithegoodparts.domain.lexicon.services.suggestions.SuggestionSe
 import groppedev.dithegoodparts.domain.spellcheck.SpellChecker;
 
 @RunWith(JUnit4.class)
+@SuppressWarnings("static-method")
 public class SpellCheckerTest 
 {
 	@Test

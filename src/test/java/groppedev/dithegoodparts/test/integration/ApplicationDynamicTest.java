@@ -18,6 +18,7 @@ import groppedev.dithegoodparts.domain.lexicon.LexiconType;
 import groppedev.dithegoodparts.domain.lexicon.services.suggestions.strategy.SuggestionStrategyType;
 
 @RunWith(JUnit4.class)
+@SuppressWarnings("static-method")
 public class ApplicationDynamicTest 
 {
 	private static ApplicationDynamicAPI app;

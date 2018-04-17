@@ -22,6 +22,7 @@ import groppedev.dithegoodparts.domain.Word;
  * 	spellcheck.suggestions.strategy=START_WITH
  */
 @RunWith(JUnit4.class)
+@SuppressWarnings("static-method")
 public class ApplicationStaticTest 
 {
 	private static ApplicationStaticAPI app;
