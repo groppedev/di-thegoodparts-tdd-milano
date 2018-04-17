@@ -1,5 +1,5 @@
 # di-thegoodparts-tdd-milano
-Example Dependency injection: The Good Parts (16/04/2018 TDD Milano)
+Caso di Studio "Correttore Ortografico" per il Talk "Dependency injection: The Good Parts" (16/04/2018 TDD Milano)
 
 ## Files di configurazione del Container di Spring
 
